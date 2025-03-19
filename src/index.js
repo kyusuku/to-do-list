@@ -1,6 +1,6 @@
 import "./styles.css";
 
-class Project {
+class Course {
     constructor(name) {
         this.name = name;
     }
