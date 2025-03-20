@@ -15,8 +15,9 @@ html {
     font-size: 16px;
 }
 
+
 body {
-    min-height: 100vh;
+    background-color: #c0cfb2;
 }
 
 input, button {
@@ -25,4 +26,91 @@ input, button {
 
 button:hover {
     cursor: pointer;
+    filter: brightness(90%);
+}
+
+.wrapper {
+    margin: 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    min-height: calc(100vh - 80px);
+}
+
+.courses, .todo-list {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.courses-heading {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+button {
+    background-color: #c0cfb2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.75rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.courses-content div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.courses-content input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #CCC;
+    color: #555;
+    font-size: 1.2rem;
+    height: 50px;
+    padding: 10px 0px;
+    width: 325px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:focus {
+        outline: none;
+        border-bottom: 1px solid black;
+        color: black;
+    }
+
+    &.filled {
+        border-bottom: none;
+        color: black;
+    }
+}
+
+.courses-content input::-webkit-input-placeholder {
+    color: #AAA;
+}
+
+.courses-content input:focus::-webkit-input-placeholder {
+    color: black;
+}
+
+.courses-content img:hover {
+    cursor: pointer;
+}
+
+.todos-heading {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
