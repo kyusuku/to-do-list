@@ -128,11 +128,11 @@ button {
     cursor: pointer;
 }
 
-.todo-content {
+/* .todo-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
+} */
 
 .todos-heading {
     display: flex;
@@ -148,10 +148,11 @@ button {
     justify-content: center;
     align-items: center;
 
-    border-radius: 20px;
+    /* border-radius: 20px; */
     padding: 20px 0px;
 
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-bottom: 1px solid #CCC;
+    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
 }
 
 .todo-content div input[type='checkbox'] {
