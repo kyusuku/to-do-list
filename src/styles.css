@@ -73,6 +73,21 @@ button {
     padding: 10px 20px;
 }
 
+.all-courses {
+    background-color: #c0cfb2;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: 20px 20px;
+    height: 70px;
+    margin-bottom: 20px;
+    font-weight: bold;
+
+    &:focus {
+        border: 1px solid darkcyan;
+    }
+}
+
 .courses-content input {
     background-color: transparent;
     border: none;
@@ -113,4 +128,68 @@ button {
     display: flex;
     align-items: center;
     gap: 40px;
+}
+
+.todo-content div {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 12fr 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    padding: 20px 0px;
+
+    border-bottom: 1px solid #CCC;
+}
+
+.todo-content div input[type='checkbox'] {
+    grid-row: 1 / -1;
+    width: 30px;
+    height: 30px;
+    justify-self: center;
+}
+
+.todo-content div #input-title {
+    font-size: 1.2rem;
+    
+    &:focus {
+        outline: none;
+        border-bottom: 1px solid black;
+        color: black;
+    }
+
+    &.filled {
+        border-bottom: none;
+        color: black;
+    }
+}
+
+.todo-content div #input-desc {
+    font-size: 0.8rem;
+
+    &:focus {
+        outline: none;
+        border-bottom: 1px solid black;
+        color: black;
+    }
+
+    &.filled {
+        border-bottom: none;
+        color: black;
+    }
+}
+
+.todo-content div input[type='date'] {
+    grid-row: 1 / -1;
+    grid-column: 3 / 4;
+}
+
+.todo-content div img {
+    grid-row: 1 / -1;
+    grid-column: 4 / 5;
+    width: 25px;
+    height: 25px;
+    justify-self: center;
 }
