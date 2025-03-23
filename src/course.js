@@ -1,8 +1,14 @@
 import { createDeleteBtn } from "./delete.js";
 import { createEditIcon } from "./edit.js";
+import { allTodos, renderTodos } from "./todo.js";
 
 const coursesContent = document.querySelector('.courses-content');
 const newCourseBtn = document.querySelector('#newCourseBtn');
+const allCourseBtn = document.querySelector('.all-courses');
+
+allCourseBtn.addEventListener('click', function () {
+    renderTodos(allTodos);
+});
 
 function getRandomPastelColor() {
     const r = Math.floor(Math.random() * 127 + 128);
@@ -81,6 +87,14 @@ function displayNewCourse() {
     
     newCourseDiv.appendChild(newCourseInput);
     coursesContent.appendChild(newCourseDiv);
+
+    newCourseDiv.addEventListener('click', (event) => {
+        if (newCourseInput.getAttribute('readonly') === "true") {
+            let courseName = newCourseInput.value;
+            let courseTodos = allTodos.filter(todo => todo.course === courseName);
+            renderTodos(courseTodos);
+        }
+    });
 };
 
 export { displayNewCourse, newCourseBtn }
