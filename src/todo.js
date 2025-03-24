@@ -56,12 +56,14 @@ function renderTodos(Todos) {
         deleteTodoBtn.addEventListener('click', () => {
             allTodos = allTodos.filter(t => t !== todo);
             renderTodos(allTodos);
+            localStorage.setItem('allTodos', JSON.stringify(allTodos));
         });
 
         todoChecklist.addEventListener('change', function () {
             if (this.checked) {
                 allTodos = allTodos.filter(t => t !== todo);
                 renderTodos(allTodos);
+                localStorage.setItem('allTodos', JSON.stringify(allTodos));
             }
         });
 
@@ -174,22 +176,26 @@ function displayNewTodo() {
     confirmBtn.addEventListener('click', () => {
         let newTodo = new Todo(newTodoTitle.value, newTodoDesc.value, newTodoDue.value, newTodoChecklist.checked, newTodoCourse.value);
         allTodos.push(newTodo);
+
         newTodoDiv.removeChild(confirmBtn);
         deleteTodoBtn.classList.add('confirmed');
 
         allTodos.sort((a, b) => compareAsc(new Date(a.dueDate), new Date(b.dueDate)));
+        localStorage.setItem('allTodos', JSON.stringify(allTodos));
         renderTodos(allTodos);
     });
 
     deleteTodoBtn.addEventListener('click', () => {
         todoContent.removeChild(newTodoDiv);
         allTodos = allTodos.filter(todo => todo.title !== newTodoTitle.value || todo.description !== newTodoDesc.value || todo.dueDate !== newTodoDue.value || todo.course !== newTodoCourse.value);
+        localStorage.setItem('allTodos', JSON.stringify(allTodos));
     })
 
     newTodoChecklist.addEventListener('change', function () {
         if (this.checked) {
             todoContent.removeChild(newTodoDiv);
             allTodos = allTodos.filter(todo => todo.title !== newTodoTitle.value || todo.description !== newTodoDesc.value || todo.dueDate !== newTodoDue.value || todo.course !== newTodoCourse.value);
+            localStorage.setItem('allTodos', JSON.stringify(allTodos));
         }
     });
 }
