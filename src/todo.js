@@ -77,8 +77,6 @@ function renderTodos(Todos) {
 }
 
 function displayNewTodo() {
-    // newTodoBtn.setAttribute('disabled', 'true');
-
     let newTodoDiv = document.createElement('div');
 
     let newTodoChecklist = document.createElement('input');
@@ -176,7 +174,6 @@ function displayNewTodo() {
     confirmBtn.addEventListener('click', () => {
         let newTodo = new Todo(newTodoTitle.value, newTodoDesc.value, newTodoDue.value, newTodoChecklist.checked, newTodoCourse.value);
         allTodos.push(newTodo);
-        // newTodoBtn.removeAttribute('disabled');
         newTodoDiv.removeChild(confirmBtn);
         deleteTodoBtn.classList.add('confirmed');
 
@@ -186,14 +183,12 @@ function displayNewTodo() {
 
     deleteTodoBtn.addEventListener('click', () => {
         todoContent.removeChild(newTodoDiv);
-        // newTodoBtn.removeAttribute('disabled');
         allTodos = allTodos.filter(todo => todo.title !== newTodoTitle.value || todo.description !== newTodoDesc.value || todo.dueDate !== newTodoDue.value || todo.course !== newTodoCourse.value);
     })
 
     newTodoChecklist.addEventListener('change', function () {
         if (this.checked) {
             todoContent.removeChild(newTodoDiv);
-            // newTodoBtn.removeAttribute('disabled');
             allTodos = allTodos.filter(todo => todo.title !== newTodoTitle.value || todo.description !== newTodoDesc.value || todo.dueDate !== newTodoDue.value || todo.course !== newTodoCourse.value);
         }
     });

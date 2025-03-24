@@ -48,6 +48,7 @@ function displayNewCourse() {
             newCourseInput.style.width = "275px";
 
             newCourseBtn.removeAttribute('disabled');
+            newCourseBtn.classList.remove('hide');
         }
     });
     
@@ -62,6 +63,7 @@ function displayNewCourse() {
             newCourseInput.style.width = "275px";
 
             newCourseBtn.removeAttribute('disabled');
+            newCourseBtn.classList.remove('hide');
         }
     });
 
@@ -86,7 +88,8 @@ function displayNewCourse() {
     });
     
     newCourseDiv.appendChild(newCourseInput);
-    coursesContent.appendChild(newCourseDiv);
+
+    coursesContent.insertBefore(newCourseDiv, newCourseBtn);
 
     newCourseDiv.addEventListener('click', (event) => {
         if (newCourseInput.getAttribute('readonly') === "true") {
