@@ -72,21 +72,33 @@ Special thanks to The Odin Project for providing a structured and comprehensive 
 To run the code on your local computer, follow these steps:
 
 1. **Clone the repository:**
+
    ```sh
    git clone https://github.com/kyusuku/to-do-list.git
    cd to-do-list
 
+   ```
+
 2. **Install dependencies:**
+
    ```sh
    npm install
 
+   ```
+
 3. **Run the development server:**
-    ```sh
-    npm run dev
+
+   ```sh
+   npm run dev
+
+   ```
 
 4. **Build the project for production:**
-    ```sh
-    npm run build
+
+   ```sh
+   npm run build
+
+   ```
 
 5. **Open the application:** Open your browser and navigate to http://localhost:8080 to view the application.
 
